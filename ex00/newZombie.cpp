@@ -2,7 +2,16 @@
 
 Zombie::Zombie(){}
 
-Zombie::Zombie(std::string s)
+Zombie::Zombie(name)
 {
+	this->name = name;
+}
 
+Zombie::~Zombie()
+{}
+
+Zombie	*newZombie(std::string name)
+{
+	Zombie* zombie = new Zombie(name);
+	return zombie;
 }
