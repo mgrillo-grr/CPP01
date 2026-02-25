@@ -1,20 +1,21 @@
+
 #include "Zombie.hpp"
 
-int     main()
+int		main(void)
 {
-	int	N;
+	int		N = 5;
 	Zombie	*horde;
 
-	N = 5;
-        horde = zombieHorde(5, "hordeName");
-	if(!horde)
+	horde = zombieHorde(N, "hordeZombie");
+	if (!horde)
 	{
-		std::cout<<"Malloc error"<<std::endl;
+		std::cout << "Error: Malloc." << std::endl;
 		return (1);
 	}
-	for(int i = 0; i < N; i++)
+	for (int i = 0; i < N; i++)
 	{
 		horde[i].announce();
 	}
-        delete[] horde;
+	delete[] horde;
+	return (0);
 }
