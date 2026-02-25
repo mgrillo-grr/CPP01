@@ -13,6 +13,6 @@ int		main(void)
 	heapZombie->announce();
 	delete heapZombie;
 
-	randomChump("stackZombie");
+	randomChump("Foo");
 	return (0);
 }
