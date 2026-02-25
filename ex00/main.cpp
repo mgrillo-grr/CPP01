@@ -4,7 +4,7 @@ int		main(void)
 {
 	Zombie	*heapZombie;
 	
-	heapZombie = newZombie("heapZombie");
+	heapZombie = newZombie("Foo");
 	if (heapZombie == NULL)
 	{
 		std::cout << "Error: Malloc Failure." << std::endl;
