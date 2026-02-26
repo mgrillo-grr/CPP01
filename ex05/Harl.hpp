@@ -4,19 +4,24 @@
 #include <iostream>
 #include <string>
 
+// Clase Harl - persona que se queja en diferentes niveles
+// Demuestra uso de punteros a funciones miembro
 class Harl
 {
 	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
+		static const int	_NUM_LEVELS = 4;  // Número de niveles de queja
+		
+		// Funciones privadas de queja por nivel
+		// Cada una imprime un mensaje específico
+		void	_debug(void);     // Nivel DEBUG: información de diagnóstico
+		void	_info(void);      // Nivel INFO: información general
+		void	_warning(void);   // Nivel WARNING: advertencia
+		void	_error(void);     // Nivel ERROR: error crítico
 
 	public:
+		// Función pública: selecciona y ejecuta la queja apropiada
+		// Usa punteros a funciones miembro para evitar if/else forest
 		void	complain(std::string level);
-
-		Harl();
-		~Harl();
 };
 
 #endif

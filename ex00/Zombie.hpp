@@ -4,19 +4,26 @@
 # include <iostream>
 # include <string>
 
+// Clase Zombie - representa un zombie básico
+// Demuestra gestión de memoria (stack vs heap)
 class Zombie
 {
 	private:
-		std::string name;
+		std::string _name;  // Nombre del zombie (privado con _)
 
 	public:
+		// Constructor: crea zombie con nombre específico
 		Zombie(std::string name);
+		
+		// Destructor: muestra mensaje de eliminación
 		~Zombie();
 
+		// Función miembro: el zombie anuncia su presencia
 		void	announce(void);
 };
 
-Zombie  *newZombie(std::string name);
-void	randomChump(std::string name);
+// Funciones globales para crear zombies
+Zombie  *newZombie(std::string name);    // Crea en heap (manual delete)
+void	randomChump(std::string name);      // Crea en stack (auto-delete)
 
 #endif
